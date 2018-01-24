@@ -8,20 +8,18 @@ public class SwitchingFrames extends GenericFrame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Gnanasekar Rs\\Desktop\\Udemy\\Drivers\\ChromeDriver\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","D:\\Sekar\\sekar Project Backups\\Escllipse\\ChromeDriver\\chromedriver_win32\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://toolsqa.com/iframe-practice-page/");
+		driver.get("https://www.forbes.com/leadership/#1a2707521d66");
 		
 		int j=NumberofFrameCalculate(driver,By.xpath("//*[@id=\"ui-id-2\"]"));
 		
 
-        driver.switchTo().defaultContent();
-		driver.switchTo().frame(j);
+        //driver.switchTo().defaultContent();
+		//driver.switchTo().frame(j);	
 		driver.close();
-	
-		
 	}
 
 
@@ -36,7 +34,7 @@ public class SwitchingFrames extends GenericFrame {
 		    int FrameCount = driver.findElements(By.tagName("iframe")).size();
             System.out.println("Number of Frames ="+" "+FrameCount);
         
-            for (i =0;i<FrameCount;i++ )
+            for (i=0;i<FrameCount;i++ )
               {
             	System.out.println(i);
             	driver.switchTo().defaultContent();
@@ -47,7 +45,7 @@ public class SwitchingFrames extends GenericFrame {
         		if(elementCount==1)
         		{	
         			driver.findElement(xpath).click();
-        				
+        			break;	
         		
         		}
         		else
@@ -61,7 +59,8 @@ public class SwitchingFrames extends GenericFrame {
         	return i;
        
 	}
-		}
+		
+}
 
 	
 
