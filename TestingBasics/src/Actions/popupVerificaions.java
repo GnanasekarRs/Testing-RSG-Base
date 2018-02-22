@@ -20,6 +20,7 @@ public class popupVerificaions {
 		Actions a = new Actions(driver);
 		a.moveToElement(b).build().perform();
 		/*
+		 * When move the cursor then popup will occur
 		 * Action will used for drag and drop,move mouse over the Element
 		 * Here WebElement b=driver.findElement(By.xpath("//span[contains(text(),'Your Orders') and @class='nav-line-2']"));
 		 * we store xpath in the Webelement and we can pass where in parameter
